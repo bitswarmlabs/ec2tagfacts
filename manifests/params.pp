@@ -26,7 +26,6 @@
 # Copyright 2015 Bryan Andrews, unless otherwise noted.
 #
 class ec2tagfacts::params {
-
   $aws_cli_ini_settings   = '/root/.aws/credentials'
 
   case $::operatingsystem {
@@ -34,29 +33,26 @@ class ec2tagfacts::params {
       $pippkg       = 'python-pip'
       $rubyjsonpkg  = 'ruby-json'
       $awscli       = 'awscli'
-      $enable_epel  = true
     }
     'Amazon': {
       $pippkg       = undef
       $rubyjsonpkg  = 'rubygem18-json'
       $awscli       = 'aws-cli'
-      $enable_epel  = false
     }
     'ubuntu', 'debian': {
       $pippkg       = 'python-pip'
       $rubyjsonpkg  = 'ruby-json'
       $awscli       = 'awscli'
-      $enable_epel  = false
     }
     'SLES', 'SLED', 'OpenSuSE', 'SuSE': {
       $pippkg       = 'python-pip'
       $rubyjsonpkg  = 'ruby-json'
       $awscli       = 'awscli'
-      $enable_epel  = false
     }
     default: {
       fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
     }
   }
 
+  $manage_awscli = true
 }

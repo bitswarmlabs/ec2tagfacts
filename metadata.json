@@ -1,12 +1,12 @@
 {
-  "name": "bryana-ec2tagfacts",
-  "version": "0.1.18",
-  "author": "Bryan Andrews",
+  "name": "bitswarmlabs/ec2tagfacts",
+  "version": "0.2.0",
+  "author": "bitswarmlabs",
   "summary": "AWS EC2 tags exported as puppet facts and AWS cli tool installed.",
   "license": "Apache-2.0",
-  "source": "git@github.com:BIAndrews/ec2tagfacts.git",
-  "project_page": "https://github.com/BIAndrews/ec2tagfacts",
-  "issues_url": "https://github.com/BIAndrews/ec2tagfacts/issues",
+  "source": "https://github.com/bitswarmlabs/ec2tagfacts.git",
+  "project_page": "https://github.com/bitswarmlabs/ec2tagfacts",
+  "issues_url": "https://github.com/bitswarmlabs/ec2tagfacts/issues",
   "tags": ["aws", "ec2", "amazon", "tags", "facter"],
   "operatingsystem_support": [
     {
@@ -92,8 +92,6 @@
   ],
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 3.2.0 < 5.0.0"},
-    {"name":"puppetlabs/inifile","version_requirement":">= 1.1.2"},
-    {"name":"stahnma/epel","version_requirement":">= 1.0.2"}
+    {"name":"jdowning/awscli","version_requirement":">= 1.3.0 < 1.4.0"}
   ]
 }
-

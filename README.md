@@ -78,9 +78,8 @@ This is the option available to existing EC2 instance without Role assignments. 
 
 Add this to your `Puppetfile`:
 ~~~
-mod 'bryana/ec2tagfacts', :latest
-mod 'stahnma/epel', :latest
-mod 'puppetlabs/inifile', :latest
+mod 'bitswarmlabs/ec2tagfacts', :latest
+mod 'jdowning/awscli', :latest
 ~~~
 
 ## Usage
@@ -133,14 +132,6 @@ Optional. Specify the AWS access_key_id with read rights to EC2 tags.
 #####`aws_secret_access_key`
 
 Optional. Specify the AWS access_key_id's secret.
-
-#####`aws_cli_ini_settings`
-
-Optional. Change the location of the AWS cli credential ini file. Full path expected.
-
-#####`enable_epel`
-
-Optional. True/false setting. Autodetected in ec2tagfacts::params based on OS family. You can override that with the parameter or in hiera.
 
 ## Limitations
 
