@@ -19,17 +19,17 @@ begin
   response = http.request(request)
 
   instance_id = response.body
-  #puts "Instance ID is #{instance_id}"
+  puts "Instance ID is #{instance_id}"
 
 rescue
 
-  #puts "this is not an AWS EC2 instance or unable to contact the AWS instance-data web server."
+  puts "this is not an AWS EC2 instance or unable to contact the AWS instance-data web server."
 
 end
 
 if !instance_id.is_a? String then
 
-  #puts "Something bad happened since there was no error but this isn't a string."
+  puts "Something bad happened since there was no error but this isn't a string."
 
 else
 
@@ -59,7 +59,7 @@ else
 
     if hash.is_a? Hash then
 
-      #puts "hash is a hash"
+      puts "hash is a hash"
 
       if hash.has_key?("Tags") then
 
@@ -68,7 +68,7 @@ else
           fact = "ec2_tag_#{child['Key']}"
           fact.downcase!
           fact.gsub(/\s+/, "_")
-          #puts "Setting fact #{fact} to #{child['Value']}"
+          puts "Setting fact #{fact} to #{child['Value']}"
 
           Facter.add("#{fact}") do
             setcode do
@@ -80,12 +80,13 @@ else
 
       else
 
-        #puts "No tags found"
+        puts "No tags found"
 
       end
 
     end
   rescue # Ignore if awscli had any issues
+    puts "awscli has problems"
   end
 
 end
