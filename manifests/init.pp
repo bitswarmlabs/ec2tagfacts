@@ -34,7 +34,7 @@ class ec2tagfacts (
   $aws_secret_access_key  = undef,
 ) inherits ec2tagfacts::params {
   $rubyjsonpkg            = $ec2tagfacts::params::rubyjsonpkg
-  $enable_epel            = $ec2tagfacts::params::enable_epel,
+  $enable_epel            = $ec2tagfacts::params::enable_epel
 
   if $rubyjsonpkg != undef {
     package { $rubyjsonpkg:
