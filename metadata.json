@@ -4,9 +4,9 @@
   "author": "bitswarmlabs",
   "summary": "AWS EC2 tags exported as puppet facts and AWS cli tool installed.",
   "license": "Apache-2.0",
-  "source": "https://github.com/bitswarmlabs/ec2tagfacts.git",
-  "project_page": "https://github.com/bitswarmlabs/ec2tagfacts",
-  "issues_url": "https://github.com/bitswarmlabs/ec2tagfacts/issues",
+  "source": "https://github.com/bitswarmlabs/puppet-ec2tagfacts.git",
+  "project_page": "https://github.com/bitswarmlabs/puppet-ec2tagfacts",
+  "issues_url": "https://github.com/bitswarmlabs/puppet-ec2tagfacts/issues",
   "tags": ["aws", "ec2", "amazon", "tags", "facter"],
   "operatingsystem_support": [
     {
