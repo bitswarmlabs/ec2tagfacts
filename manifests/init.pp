@@ -33,6 +33,15 @@ class ec2tagfacts (
   $aws_access_key_id      = undef,  # if undef we assume they are setup correctly already
   $aws_secret_access_key  = undef,
 ) inherits ec2tagfacts::params {
+  $rubyjsonpkg            = $ec2tagfacts::params::rubyjsonpkg
+  $enable_epel            = $ec2tagfacts::params::enable_epel,
+
+  if $rubyjsonpkg != undef {
+    package { $rubyjsonpkg:
+      ensure => 'installed',
+    }
+  }
+
   if str2bool($manage_awscli) {
     include '::awscli'
     if $aws_access_key_id or $aws_secret_access_key {
