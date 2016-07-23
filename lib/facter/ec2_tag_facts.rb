@@ -43,7 +43,7 @@ else
           fact.downcase!
           fact.gsub(/\s+/, "_")
 
-          puts "ec2tagfacts: fact #{fact} = #{child['Value']}"
+          # puts "ec2tagfacts: fact #{fact} = #{child['Value']}"
 
           Facter.add("#{fact}") do
             setcode do
