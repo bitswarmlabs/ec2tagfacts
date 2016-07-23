@@ -17,5 +17,3 @@
 
 class { 'ec2tagfacts':
 }
-
-notify { "AWS EC2 name tag is $::ec2_tag_name": }

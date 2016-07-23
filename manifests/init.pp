@@ -37,9 +37,7 @@ class ec2tagfacts (
   $enable_epel            = $ec2tagfacts::params::enable_epel
 
   if $rubyjsonpkg != undef {
-    package { $rubyjsonpkg:
-      ensure => 'installed',
-    }
+    ensure_packages([$rubyjsonpkg])
   }
 
   if str2bool($manage_awscli) {
